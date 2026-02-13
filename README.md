@@ -32,14 +32,6 @@ This repository provides an end-to-end deep learning framework that predicts bod
 - PyTorch 1.12+
 - CUDA 11.3+ (for GPU acceleration)
 - 16GB+ RAM (24GB+ recommended for training)
-
-### Setup
-```bash
-git clone https://github.com/yourusername/body-composition-voxel-net.git
-cd body-composition-voxel-net
-pip install -r requirements.txt
-```
-
 ---
 
 ## Dataset
