@@ -4,10 +4,7 @@
 [![Paper](https://img.shields.io/badge/Paper-SN%20Computer%20Science-blue)](link-to-paper)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Official implementation of **"Voxel-based Deep Regression for Enhanced Body Composition Estimation from 3D Body Scans"** published in SN Computer Science.
-
-> **Authors:** Boyuan Feng, Ruting Cheng, Yijiang Zheng, Shuya Feng, Khashayar Vaziri, James Hahn  
-> **Institutions:** George Washington University, University of Connecticut
+Official implementation of **"Voxel-based Deep Regression for Enhanced Body Composition Estimation from 3D Body Scans"**
 
 ---
 
