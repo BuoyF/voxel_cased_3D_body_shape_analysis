@@ -1,3 +1,4 @@
+# voxel_dxa_trainer.py (improved version with stronger model)
 
 import os
 import torch
@@ -100,6 +101,22 @@ def train(csv_path, voxel_dir):
     
     dataset = VoxelCompositionDataset(csv_path, voxel_dir)
     train_ids, val_ids = train_test_split(range(len(dataset)), test_size=0.1, random_state=42)
+    
+    # Print dataset split information
+    total_samples = len(dataset)
+    train_samples = len(train_ids)
+    val_samples = len(val_ids)
+    train_percentage = (train_samples / total_samples) * 100
+    val_percentage = (val_samples / total_samples) * 100
+    
+    print("\n" + "="*50)
+    print("📊 DATASET SPLIT INFORMATION")
+    print("="*50)
+    print(f"Total Samples: {total_samples}")
+    print(f"Training Set: {train_samples} samples ({train_percentage:.1f}%)")
+    print(f"Validation Set: {val_samples} samples ({val_percentage:.1f}%)")
+    print("="*50 + "\n")
+    
     train_loader = DataLoader(torch.utils.data.Subset(dataset, train_ids), batch_size=16, shuffle=True)
     val_loader = DataLoader(torch.utils.data.Subset(dataset, val_ids), batch_size=16)
 
@@ -170,10 +187,11 @@ def train(csv_path, voxel_dir):
     minutes = int((elapsed_time % 3600) // 60)
     seconds = int(elapsed_time % 60)
     print("\n" + "="*50)
-    print("TRAINING TIME")
+    print("⏱️  TRAINING TIME")
     print("="*50)
     print(f"Total Training Time: {hours}h {minutes}m {seconds}s ({elapsed_time:.2f} seconds)")
     print("="*50 + "\n")
 
 if __name__ == "__main__":
     train("all_compositions_with_mesh_path.csv", "voxelmap/human_voxelmaps")
+
